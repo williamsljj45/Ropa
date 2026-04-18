@@ -206,3 +206,40 @@ footer {
     border-top: 1px solid #eeeeee;
     margin-top: 50px;
 }
+
+/* =========================================
+   ESTILOS DEL FORMULARIO DE CONTACTO
+========================================= */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto; /* Centra el formulario */
+}
+
+.formulario-contacto label {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formulario-contacto input, 
+.formulario-contacto textarea {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    font-family: inherit;
+    font-size: 14px;
+    background: transparent;
+}
+
+.formulario-contacto textarea {
+    height: 120px;
+    resize: vertical; /* Solo permite hacer más grande el cuadro hacia abajo */
+}
+
+.formulario-contacto button {
+    margin-top: 30px;
+}
