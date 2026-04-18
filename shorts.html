@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-   <meta charset="utf-8" />
-   <title>A&W Tienda de Ropa</title>
-   <link rel="stylesheet" href="estilos.css" />
-  </head>
-  
-  <body>
-    <div id="container">
+<head>
+  <meta charset="utf-8" />
+  <title>A&W - Shorts</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
 
-      <header>
-        <h1>A&W</h1>
-      </header>
+<body>
+  <div id="container">
 
-     <nav>
+    <header>
+      <h1>Shorts</h1>
+    </header>
+
+    <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="vestidos.html">Vestidos</a></li>
@@ -26,43 +26,29 @@
         </ul>
       </nav>
 
-      <div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-      <section id="content">
-        <div class="productos-grid">
+    <section id="content">
+      <div class="productos-grid">
 
-          <article class="articulo-producto">
-            <img src="img/foto-pantalon.jpg" alt="Pantalón" class="img-producto">
-            <h2>Pantalón Cargo</h2>
-            <p class="precio">$599.00 MXN</p>
-            <button class="btn-comprar" onclick="agregarAlCarrito('Pantalón Cargo', 599)">Añadir al carrito</button>
-          </article>
+        <article class="articulo-producto">
+          <img src="img/shortmezclilla.jpg" alt="Short mezclilla" class="img-producto">
+          <h2>Short mezclilla</h2>
+          <p class="precio">$150.00 MXN</p>
+          <button class="btn-comprar" onclick="agregarAlCarrito('Short mezclilla', 150)">Añadir al carrito</button>
+        </article>
 
-          <article class="articulo-producto">
-            <img src="img/foto-camisa.jpg" alt="Camisas" class="img-producto">
-            <h2>Camisa Oversize</h2>
-            <p class="precio">$349.00 MXN</p>
-            <button class="btn-comprar" onclick="agregarAlCarrito('Camisa Oversize', 349)">Añadir al carrito</button>
-          </article>
-
-          <article class="articulo-producto">
-            <img src="img/foto-chamarra.jpg" alt="Chamarras" class="img-producto">
-            <h2>Chamarra de Cuero</h2>
-            <p class="precio">$1,299.00 MXN</p>
-            <button class="btn-comprar" onclick="agregarAlCarrito('Chamarra de Cuero', 1299)">Añadir al carrito</button>
-          </article>
-
-          <article class="articulo-producto">
-            <img src="img/foto-nike.jpg" alt="Tenis" class="img-producto">
-            <h2>Tenis Blancos</h2>
-            <p class="precio">$899.00 MXN</p>
-           <button class="btn-comprar" onclick="agregarAlCarrito('Tenis Blancos', 899)">Añadir al carrito</button>
-          </article>
+        <article class="articulo-producto">
+          <img src="img/shortplayero.jpg" alt="Short playero" class="img-producto">
+          <h2>Short playero</h2>
+          <p class="precio">$100.00 MXN</p>
+          <button class="btn-comprar" onclick="agregarAlCarrito('Short playero', 100)">Añadir al carrito</button>
+        </article>
 
         </div>
-      </section>
+    </section>
 
-      <aside>
+    <aside>
         <h2>Buscador</h2>
         <form>
           <input type="text" placeholder="Buscar prenda...">
@@ -94,19 +80,15 @@
 
       </aside>
 
-      <div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-		<a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s;">
-        🛒 Pagar Pedido en WhatsApp
-      </a>
-		
-      <footer>
-        Proyecto final WEB &copy; 2026 - Williams
-      </footer>
+    <footer>
+      Proyecto final WEB &copy; 2026 - Williams
+    </footer>
 
-    </div>
-	  
-	  <script>
+  </div>
+	
+	 <script>
       let carrito = []; // Ahora guardaremos el nombre y el precio juntos
       let total = 0;
       
@@ -182,6 +164,5 @@
           botonWpp.style.display = "block";
       }
     </script>
-	  
-  </body>
+</body>
 </html>

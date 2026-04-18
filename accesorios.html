@@ -1,42 +1,169 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>A&W - Título de la página</title>
-<link rel="stylesheet" href="estilos.css" />
+  <meta charset="utf-8" />
+  <title>A&W - Accesorios</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 
 <body>
-<div id="container">
+  <div id="container">
 
-<header>
-<h1>Nombre de la sección</h1>
-</header>
+    <header>
+      <h1>Accesorios</h1>
+    </header>
 
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="hombres.html">Hombres</a></li>
-<li><a href="mujeres.html">Mujeres</a></li>
-<li><a href="accesorios.html">Accesorios</a></li>
-<li><a href="nosotros.html">Nosotros</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</nav>
+    <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vestidos.html">Vestidos</a></li>
+          <li><a href="pantalones.html">Pantalones</a></li>
+          <li><a href="blusas.html">Blusas</a></li>
+          <li><a href="faldas.html">Faldas</a></li>
+          <li><a href="shorts.html">Shorts</a></li>
+          <li><a href="accesorios.html">Accesorios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
 
-<div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-<section id="content">
-<h2>Aquí irá el contenido de esta sección</h2>
-<p>Aquí irá la estructura de los productos del inicio, o poner un formulario, texto, etc.</p>
-</section>
+    <section id="content">
+      <div class="productos-grid">
 
-<div class="clearfix"></div>
+        <article class="articulo-producto">
+          <img src="img/collar.jpg" alt="Collar" class="img-producto">
+          <h2>Collar</h2>
+          <p class="precio">$300.00 MXN</p>
+          <button class="btn-comprar" onclick="agregarAlCarrito('Collar', 300)">Añadir al carrito</button>
+        </article>
 
-<footer>
-Proyecto final WEB &copy; 2026 - Williams
-</footer>
+        <article class="articulo-producto">
+          <img src="img/bolsa.jpg" alt="Bolsa" class="img-producto">
+          <h2>Bolsa</h2>
+          <p class="precio">$500.00 MXN</p>
+          <button class="btn-comprar" onclick="agregarAlCarrito('Bolsa', 500)">Añadir al carrito</button>
+        </article>
 
-</div>
+        </div>
+    </section>
+
+    <aside>
+        <h2>Buscador</h2>
+        <form>
+          <input type="text" placeholder="Buscar prenda...">
+          <input type="submit" value="Buscar" />
+        </form>
+        <br>
+        <h2>Categorías</h2>
+        <ul>
+          <li><a href="#">Lo más nuevo</a></li>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#">Básicos</a></li>
+        </ul>
+
+        <br><br>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
+        <h2>Tu Carrito</h2>
+        
+        <ul id="lista-carrito" style="margin-bottom: 15px; font-size: 13px; color: #555;">
+          <li>El carrito está vacío</li>
+        </ul>
+        
+        <p style="font-size: 14px; color: #000; margin-bottom: 15px;">
+          <strong>Total: $<span id="total-carrito">0</span> MXN</strong>
+        </p>
+
+        <button onclick="vaciarCarrito()" style="background: transparent; border: 1px solid #cc0000; color: #cc0000; padding: 8px 0; cursor: pointer; width: 100%; text-transform: uppercase; font-size: 11px; font-weight: bold; transition: 0.3s;">
+          Vaciar Carrito
+        </button>
+
+      </aside>
+
+    <div class="clearfix"></div>
+
+    <footer>
+      Proyecto final WEB &copy; 2026 - Williams
+    </footer>
+
+  </div>
+	
+	 <script>
+      let carrito = []; // Ahora guardaremos el nombre y el precio juntos
+      let total = 0;
+      
+      // ¡IMPORTANTE! Recuerda poner tu número aquí
+      let miNumeroDeWhatsApp = "526641811247"; 
+
+      function agregarAlCarrito(nombrePrenda, precioPrenda) {
+          // 1. Guardamos el producto y sumamos el precio
+          carrito.push({ nombre: nombrePrenda, precio: precioPrenda });
+          total = total + precioPrenda;
+
+          // 2. Ejecutamos las funciones para actualizar la pantalla y WhatsApp
+          actualizarCarritoVisual();
+          prepararWhatsApp();
+      }
+		  
+		  // 4. Esta función borra todo y reinicia el carrito
+      function vaciarCarrito() {
+          // Reiniciamos nuestras variables a cero y lista vacía
+          carrito = [];
+          total = 0;
+
+          // Llamamos a la función que ya teníamos para que actualice los números en pantalla (los pondrá en 0)
+          actualizarCarritoVisual();
+
+          // Volvemos a poner el texto por defecto en la lista
+          document.getElementById("lista-carrito").innerHTML = "<li>El carrito está vacío</li>";
+
+          // Ocultamos el botón verde de WhatsApp porque ya no hay nada que comprar
+          document.getElementById("btn-whatsapp").style.display = "none";
+      }
+
+      function actualizarCarritoVisual() {
+          // Buscamos la lista y el texto del total en el HTML
+          let listaHTML = document.getElementById("lista-carrito");
+          let totalHTML = document.getElementById("total-carrito");
+
+          // Limpiamos la lista para volver a escribirla desde cero
+          listaHTML.innerHTML = "";
+
+          // Recorremos todo lo que hay en el carrito y lo escribimos en la barra lateral
+          for (let i = 0; i < carrito.length; i++) {
+              let item = carrito[i];
+              // Usamos Flexbox directo en la etiqueta para separar el nombre del precio
+              listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px;'>" + 
+                                     "<span>" + item.nombre + "</span>" + 
+                                     "<span>$" + item.precio + "</span>" + 
+                                     "</li>";
+          }
+
+          // Actualizamos el número del total
+          totalHTML.innerText = total;
+      }
+
+      function prepararWhatsApp() {
+          // Usamos \n para los saltos de línea reales
+          let textoMensaje = "Hola A&W, me gustaría pedir lo siguiente:\n\n";
+          
+          for (let i = 0; i < carrito.length; i++) {
+              let item = carrito[i];
+              textoMensaje += "- " + item.nombre + " ($" + item.precio + ")\n";
+          }
+          
+          textoMensaje += "\n*Total estimado: $" + total + " MXN*";
+
+          // AQUÍ ESTÁ LA SOLUCIÓN AL CORTE: encodeURIComponent arregla el "&" y los espacios
+          let textoCodificado = encodeURIComponent(textoMensaje);
+          let enlaceFinal = "https://wa.me/" + miNumeroDeWhatsApp + "?text=" + textoCodificado;
+
+          // Mostramos el botón
+          let botonWpp = document.getElementById("btn-whatsapp");
+          botonWpp.href = enlaceFinal;
+          botonWpp.style.display = "block";
+      }
+    </script>
+	
 </body>
 </html>

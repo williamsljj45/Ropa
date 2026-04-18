@@ -4,46 +4,51 @@
     box-sizing: border-box; 
 }
 
-
+/* 1. FONDO LIMPIO Y TIPOGRAFÍA MODERNA */
 body {
-    background: #ffffff; 
+    background: #ffffff; /* Blanco puro */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #111;
 }
 
 #container {
     width: 90%;
-    max-width: 1200px; 
+    max-width: 1200px; /* Evita que la página se estire demasiado en pantallas gigantes */
     margin: 0px auto;
-  
+    /* Eliminamos el borde negro exterior */
 }
 
-
+/* 2. ENCABEZADO ELEGANTE (Tipo revista) */
 header {
     text-align: center;
-    padding: 40px 0 20px 0; 
+    padding: 40px 0 20px 0; /* Más espacio arriba y abajo */
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Tu fuente original, muy buena elección */
     font-size: 40px;
-    letter-spacing: 5px; 
-    text-transform: uppercase; 
+    letter-spacing: 5px; /* Separamos las letras para darle estilo premium */
+    text-transform: uppercase; /* Todo en mayúsculas */
 }
 
-
+/* 3. MENÚ DE NAVEGACIÓN CENTRADO Y SUTIL */
 nav {
-    display: flex;
-    justify-content: center; 
     padding: 15px 0;
     border-top: 1px solid #eeeeee; 
     border-bottom: 1px solid #eeeeee;
     margin-bottom: 40px;
 }
 
-nav ul li {
+/* AQUÍ ESTÁ LA MAGIA PARA QUE SEA HORIZONTAL */
+nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Si la pantalla es pequeña, los enlaces bajan de renglón suavemente */
+    justify-content: center;
     list-style: none;
-    margin: 0 20px;
+}
+
+nav ul li {
+    margin: 5px 15px; /* Reduje un poco el margen para que quepan todos tus nuevos enlaces */
 }
 
 nav ul li a {
@@ -56,7 +61,6 @@ nav ul li a {
     transition: color 0.3s; 
 }
 
-
 nav ul li a:hover {
     color: #888888; 
 }
@@ -65,10 +69,10 @@ nav ul li a:hover {
     clear: both;
 }
 
-
+/* 4. AJUSTE DE COLUMNAS (Sin bordes duros) */
 #content {
     float: left;
-    width: 75%; 
+    width: 75%; /* Ajustamos los porcentajes para dar más aire */
     padding-right: 40px;
 }
 
@@ -76,10 +80,10 @@ aside {
     float: left;
     width: 25%; 
     padding-left: 20px;
-    border-left: 1px solid #eeeeee; 
+    border-left: 1px solid #eeeeee; /* Un separador vertical muy tenue */
 }
 
-
+/* DISEÑO DE LA BARRA LATERAL */
 aside h2 {
     font-size: 14px;
     text-transform: uppercase;
@@ -126,30 +130,32 @@ aside ul li a:hover {
     color: #000;
 }
 
-
+/* =========================================
+   NUEVOS ESTILOS PARA LA TIENDA DE ROPA
+========================================= */
 
 .productos-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; 
+    gap: 30px; /* Más espacio entre los productos */
 }
 
 .articulo-producto {
     width: calc(50% - 15px); 
     text-align: center;
-    
+    /* Eliminamos el borde de la tarjeta para que la foto sea lo principal */
 }
 
-
+/* EL TRUCO PARA QUE LAS FOTOS SE VEAN PROFESIONALES */
 .img-producto {
     width: 100%;
-    height: 450px; 
+    height: 450px; /* Un poco más altas, formato retrato */
     object-fit: cover; 
     margin-bottom: 15px;
-    transition: transform 0.4s ease; 
+    transition: transform 0.4s ease; /* Prepara la imagen para una animación */
 }
 
-
+/* Animación: la foto hace un ligero zoom cuando le pasas el mouse */
 .articulo-producto:hover .img-producto {
     transform: scale(1.03);
 }
@@ -169,7 +175,7 @@ aside ul li a:hover {
     margin-bottom: 15px;
 }
 
-
+/* BOTONES ESTILO MODERNO (Fondo transparente, borde negro) */
 .btn-comprar {
     background: transparent;
     color: #000;
@@ -184,15 +190,15 @@ aside ul li a:hover {
     transition: all 0.3s;
 }
 
-
+/* El botón se invierte a negro cuando lo tocas */
 .btn-comprar:hover {
     background: #000;
     color: #fff;
 }
 
-
+/* PIE DE PÁGINA LIMPIO */
 footer {
-    background: #ffffff; 
+    background: #ffffff; /* Le quitamos el fondo negro pesado */
     color: #888888;
     text-align: center;
     padding: 40px 0;
