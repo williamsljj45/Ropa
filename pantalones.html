@@ -33,7 +33,7 @@
 
         <article class="articulo-producto">
           <img src="img/pantalonmezclilla.jpg" alt="Pantalon mezclilla" class="img-producto">
-          <h2>Pantalon mexclilla</h2>
+          <h2>Pantalon mezclilla</h2>
           <p class="precio">$300.00 MXN</p>
           <button class="btn-comprar" onclick="agregarAlCarrito('Pantalon mezclilla', 300)">Añadir al carrito</button>
         </article>
@@ -89,80 +89,87 @@
   </div>
 	
 	 <script>
-      let carrito = []; // Ahora guardaremos el nombre y el precio juntos
-      let total = 0;
+      // 1. En lugar de empezar en 0, leemos la "libreta" (localStorage). 
+      // JSON.parse traduce el texto guardado de vuelta a código que la página entienda.
+      let carrito = JSON.parse(localStorage.getItem('miCarritoAW')) || [];
+      let total = parseFloat(localStorage.getItem('miTotalAW')) || 0;
       
-      // ¡IMPORTANTE! Recuerda poner tu número aquí
-      let miNumeroDeWhatsApp = "526641811247"; 
+      let miNumeroDeWhatsApp = "526640000000"; 
+
+      // 2. Esta función arranca solita cada vez que abres CUALQUIER página
+      function inicializarPagina() {
+          actualizarCarritoVisual();
+          if(carrito.length > 0) {
+              prepararWhatsApp(); // Si hay algo en la memoria, mostramos el botón
+          }
+      }
 
       function agregarAlCarrito(nombrePrenda, precioPrenda) {
-          // 1. Guardamos el producto y sumamos el precio
           carrito.push({ nombre: nombrePrenda, precio: precioPrenda });
           total = total + precioPrenda;
 
-          // 2. Ejecutamos las funciones para actualizar la pantalla y WhatsApp
+          // GUARDAR EN LA MEMORIA (Anotamos en la libreta)
+          localStorage.setItem('miCarritoAW', JSON.stringify(carrito));
+          localStorage.setItem('miTotalAW', total);
+
           actualizarCarritoVisual();
           prepararWhatsApp();
       }
-		  
-		  // 4. Esta función borra todo y reinicia el carrito
-      function vaciarCarrito() {
-          // Reiniciamos nuestras variables a cero y lista vacía
-          carrito = [];
-          total = 0;
-
-          // Llamamos a la función que ya teníamos para que actualice los números en pantalla (los pondrá en 0)
-          actualizarCarritoVisual();
-
-          // Volvemos a poner el texto por defecto en la lista
-          document.getElementById("lista-carrito").innerHTML = "<li>El carrito está vacío</li>";
-
-          // Ocultamos el botón verde de WhatsApp porque ya no hay nada que comprar
-          document.getElementById("btn-whatsapp").style.display = "none";
-      }
 
       function actualizarCarritoVisual() {
-          // Buscamos la lista y el texto del total en el HTML
           let listaHTML = document.getElementById("lista-carrito");
           let totalHTML = document.getElementById("total-carrito");
 
-          // Limpiamos la lista para volver a escribirla desde cero
+          if (!listaHTML || !totalHTML) return; // Evita errores si la barra lateral no ha cargado
+
           listaHTML.innerHTML = "";
 
-          // Recorremos todo lo que hay en el carrito y lo escribimos en la barra lateral
-          for (let i = 0; i < carrito.length; i++) {
-              let item = carrito[i];
-              // Usamos Flexbox directo en la etiqueta para separar el nombre del precio
-              listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px;'>" + 
-                                     "<span>" + item.nombre + "</span>" + 
-                                     "<span>$" + item.precio + "</span>" + 
-                                     "</li>";
+          if (carrito.length === 0) {
+              listaHTML.innerHTML = "<li>El carrito está vacío</li>";
+          } else {
+              for (let i = 0; i < carrito.length; i++) {
+                  let item = carrito[i];
+                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px;'>" + 
+                                         "<span>" + item.nombre + "</span>" + 
+                                         "<span>$" + item.precio + "</span>" + 
+                                         "</li>";
+              }
           }
-
-          // Actualizamos el número del total
           totalHTML.innerText = total;
       }
 
+      function vaciarCarrito() {
+          carrito = [];
+          total = 0;
+
+          // BORRAMOS LA MEMORIA
+          localStorage.removeItem('miCarritoAW');
+          localStorage.removeItem('miTotalAW');
+
+          actualizarCarritoVisual();
+          document.getElementById("btn-whatsapp").style.display = "none";
+      }
+
       function prepararWhatsApp() {
-          // Usamos \n para los saltos de línea reales
           let textoMensaje = "Hola A&W, me gustaría pedir lo siguiente:\n\n";
-          
           for (let i = 0; i < carrito.length; i++) {
               let item = carrito[i];
               textoMensaje += "- " + item.nombre + " ($" + item.precio + ")\n";
           }
-          
           textoMensaje += "\n*Total estimado: $" + total + " MXN*";
 
-          // AQUÍ ESTÁ LA SOLUCIÓN AL CORTE: encodeURIComponent arregla el "&" y los espacios
           let textoCodificado = encodeURIComponent(textoMensaje);
           let enlaceFinal = "https://wa.me/" + miNumeroDeWhatsApp + "?text=" + textoCodificado;
 
-          // Mostramos el botón
           let botonWpp = document.getElementById("btn-whatsapp");
-          botonWpp.href = enlaceFinal;
-          botonWpp.style.display = "block";
+          if(botonWpp) {
+              botonWpp.href = enlaceFinal;
+              botonWpp.style.display = "block";
+          }
       }
+
+      // Ejecutamos la función de arranque justo cuando carga el script
+      inicializarPagina();
     </script>
 	
 </body>
