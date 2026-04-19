@@ -243,3 +243,124 @@ footer {
 .formulario-contacto button {
     margin-top: 30px;
 }
+
+/* =========================================
+   NUEVOS ESTILOS DEL BANNER DE IMAGEN
+========================================= */
+.image-banner-container {
+    width: 100%;
+    /* Le damos una altura máxima para que no ocupe toda la pantalla, 
+       muy al estilo sutil de Bershka */
+    height: 150px; 
+    overflow: hidden; /* Corta lo que sobre si la imagen es muy alta */
+    border-top: 1px solid #eeeeee; /* Un separador muy tenue */
+    border-bottom: 1px solid #eeeeee;
+}
+
+.image-banner {
+    width: 100%;
+    height: 100%; /* Obliga a la imagen a llenar el contenedor */
+    object-fit: cover; /* Truco de HTML5 para que la foto se recorte bonita sin estirarse feo */
+    display: block;
+}
+
+/* =========================================
+   AJUSTE PARA CELULARES (RESPONSIVE)
+========================================= */
+/* Agrega esto dentro de tu Media Query (@media (max-width: 768px)) si ya la tienes, 
+   o pégalo aquí abajo */
+@media (max-width: 768px) {
+    .image-banner-container {
+        height: 80px; /* Hacemos el banner más bajito en celular */
+    }
+}
+/* =========================================
+   ESTILOS DE LAS CATEGORÍAS VISUALES (INICIO)
+========================================= */
+.categorias-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.categoria-item {
+    width: 30%; /* Caben 3 por fila en computadora */
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.categoria-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.categoria-item:hover img {
+    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+}
+
+.categoria-item h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.menu-lateral li {
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO (LA MAGIA PARA CELULARES)
+========================================= */
+/* Todo lo que esté aquí adentro solo se aplica si la pantalla mide 768px o menos (celulares y tablets) */
+@media (max-width: 768px) {
+    
+    /* Hacemos que el contenedor ocupe casi toda la pantalla */
+    #container {
+        width: 95%;
+    }
+
+    /* El contenido principal ya no flota a la izquierda, ocupa el 100% */
+    #content {
+        float: none;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    /* La barra lateral baja y se acomoda debajo del contenido */
+    aside {
+        float: none;
+        width: 100%;
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid #000;
+        padding-top: 30px;
+        margin-top: 40px;
+    }
+
+    /* Las prendas de la tienda ahora ocupan el 100% (1 por fila para que se vean grandes) */
+    .articulo-producto {
+        width: 100%; 
+    }
+
+    /* Las categorías visuales del inicio muestran 2 por fila en celular en lugar de 3 */
+    .categoria-item {
+        width: 47%; 
+    }
+    .categoria-item img {
+        height: 200px; /* Un poco más bajitas para que quepan bien */
+    }
+
+    /* El banner principal del inicio se hace más pequeño */
+    .hero-section img {
+        height: 250px;
+    }
+}

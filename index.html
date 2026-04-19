@@ -9,23 +9,21 @@
   <body>
     <div id="container">
 
-      <header>
+     <header>
         <h1>A&W</h1>
       </header>
 
-     <nav>
+      <div class="image-banner-container">
+        <img src="img/banner1.jpg" alt="A&W Promoción" width="885" height="200" class="image-banner">
+      </div>
+
+      <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="vestidos.html">Vestidos</a></li>
-          <li><a href="pantalones.html">Pantalones</a></li>
-          <li><a href="blusas.html">Blusas</a></li>
-          <li><a href="faldas.html">Faldas</a></li>
-          <li><a href="shorts.html">Shorts</a></li>
-          <li><a href="accesorios.html">Accesorios</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
-
+		
       <div class="clearfix"></div>
 
    <section id="content">
@@ -33,24 +31,44 @@
         <div class="hero-section" style="margin-bottom: 50px;">
           <img src="img/banner.jpg" alt="Nueva Colección" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 15px;">
           <div style="text-align: center;">
-            <h2 style="font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Colección 2026</h2>
-            <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Descubre los estilos minimalistas que definirán tu temporada.</p>
+            <h2 style="font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Conoce nuestro bazar</h2>
+            <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Descubre la ropa de segunda mano que definirá tu estilo.</p>
             <a href="vestidos.html" class="btn-comprar" style="display: inline-block; width: auto; padding: 12px 40px; text-decoration: none;">Ver lo más nuevo</a>
           </div>
         </div>
 
-        <h3 style="text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Compra por categoría</h3>
+       <h3 style="text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Compra por categoría</h3>
         
-        <div style="display: flex; gap: 20px; justify-content: space-between;">
+        <div class="categorias-grid">
           
-          <a href="pantalones.html" style="text-decoration: none; color: black; width: 48%; text-align: center;">
-            <img src="img/pantalones.jpg" alt="Pantalones" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 10px; transition: transform 0.3s;">
-            <h4 style="font-weight: normal; text-transform: uppercase; letter-spacing: 1px;">Pantalones</h4>
+          <a href="vestidos.html" class="categoria-item">
+            <img src="img/vestidos.jpg" alt="Vestidos">
+            <h4>Vestidos</h4>
           </a>
 
-          <a href="blusas.html" style="text-decoration: none; color: black; width: 48%; text-align: center;">
-            <img src="img/blusas.jpg" alt="Blusas" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 10px; transition: transform 0.3s;">
-            <h4 style="font-weight: normal; text-transform: uppercase; letter-spacing: 1px;">Blusas</h4>
+          <a href="pantalones.html" class="categoria-item">
+            <img src="img/pantalones.jpg" alt="Pantalones">
+            <h4>Pantalones</h4>
+          </a>
+
+          <a href="blusas.html" class="categoria-item">
+            <img src="img/blusas.jpg" alt="Blusas">
+            <h4>Blusas</h4>
+          </a>
+
+          <a href="faldas.html" class="categoria-item">
+            <img src="img/faldas.jpg" alt="Faldas">
+            <h4>Faldas</h4>
+          </a>
+
+          <a href="shorts.html" class="categoria-item">
+            <img src="img/shorts.jpg" alt="Shorts">
+            <h4>Shorts</h4>
+          </a>
+
+          <a href="accesorios.html" class="categoria-item">
+            <img src="img/accesorios.jpg" alt="Accesorios">
+            <h4>Accesorios</h4>
           </a>
 
         </div>
@@ -64,11 +82,15 @@
           <input type="submit" value="Buscar" />
         </form>
         <br>
+        
         <h2>Categorías</h2>
-        <ul>
-          <li><a href="#">Lo más nuevo</a></li>
-          <li><a href="#">Ofertas</a></li>
-          <li><a href="#">Básicos</a></li>
+        <ul class="menu-lateral">
+          <li><a href="vestidos.html">Vestidos</a></li>
+          <li><a href="pantalones.html">Pantalones</a></li>
+          <li><a href="blusas.html">Blusas</a></li>
+          <li><a href="faldas.html">Faldas</a></li>
+          <li><a href="shorts.html">Shorts</a></li>
+          <li><a href="accesorios.html">Accesorios</a></li>
         </ul>
 
         <br><br>
