@@ -7,15 +7,16 @@
 </head>
 
 <body>
+	
+	<div class="image-banner-container">
+        <img src="img/banner.png" alt="A&W Promoción" class="image-banner">
+      </div>
+	
   <div id="container">
 
     <header>
         <h1>pantalones</h1>
       </header>
-
-      <div class="image-banner-container">
-        <img src="img/banner1.jpg" alt="A&W Promoción" width="885" height="200" class="image-banner">
-      </div>
 
     <nav>
         <ul>
@@ -36,12 +37,13 @@
           <button class="btn-comprar" onclick="agregarAlCarrito('Pantalon mezclilla', 300)">Añadir al carrito</button>
         </article>
 
-        <article class="articulo-producto">
+        <article class="articulo-producto vendido">
           <img src="img/pantalondevestir.jpg" alt="Pantalon de vestir" class="img-producto">
           <h2>Pantalon de vestir</h2>
           <p class="precio">$300.00 MXN</p>
-          <button class="btn-comprar" onclick="agregarAlCarrito('Pantalon de vestir', 300)">Añadir al carrito</button>
+          <button class="btn-agotado" disabled>Vendido</button>
         </article>
+		  
 
         </div>
     </section>
@@ -81,14 +83,18 @@
         </button>
 
       </aside>
+
     <div class="clearfix"></div>
+
+    <a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); z-index: 1000;">
+      🛒 Pagar Pedido en WhatsApp
+    </a>
 
     <footer>
       Proyecto final WEB &copy; 2026 - Williams
     </footer>
 
   </div>
-	
 	 <script>
       // 1. En lugar de empezar en 0, leemos la "libreta" (localStorage). 
       // JSON.parse traduce el texto guardado de vuelta a código que la página entienda.
@@ -130,7 +136,7 @@
           } else {
               for (let i = 0; i < carrito.length; i++) {
                   let item = carrito[i];
-                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px;'>" + 
+                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" + 
                                          "<span>" + item.nombre + "</span>" + 
                                          "<span>$" + item.precio + "</span>" + 
                                          "</li>";
@@ -172,6 +178,7 @@
       // Ejecutamos la función de arranque justo cuando carga el script
       inicializarPagina();
     </script>
+	  
 	
 </body>
 </html>

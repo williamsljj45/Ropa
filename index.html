@@ -7,15 +7,12 @@
   </head>
   
   <body>
-    <div id="container">
-
-     <header>
-        <h1>A&W</h1>
-      </header>
-
-      <div class="image-banner-container">
-        <img src="img/banner1.jpg" alt="A&W Promoción" width="885" height="200" class="image-banner">
+	  
+	  <div class="image-banner-container">
+        <img src="img/banner.png" alt="A&W Promoción" class="image-banner">
       </div>
+	  
+    <div id="container">
 
       <nav>
         <ul>
@@ -29,7 +26,7 @@
    <section id="content">
         
         <div class="hero-section" style="margin-bottom: 50px;">
-          <img src="img/banner.jpg" alt="Nueva Colección" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 15px;">
+          <img src="img/banner3.png" alt="Nueva Colección" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 15px;">
           <div style="text-align: center;">
             <h2 style="font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Conoce nuestro bazar</h2>
             <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Descubre la ropa de segunda mano que definirá tu estilo.</p>
@@ -37,7 +34,7 @@
           </div>
         </div>
 
-       <h3 style="text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Compra por categoría</h3>
+       <h3 style="text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid #c97a8e; padding-bottom: 10px;">Compra por categoría</h3>
         
         <div class="categorias-grid">
           
@@ -61,9 +58,9 @@
             <h4>Faldas</h4>
           </a>
 
-          <a href="shorts.html" class="categoria-item">
-            <img src="img/shorts.jpg" alt="Shorts">
-            <h4>Shorts</h4>
+          <a href="chamarras.html" class="categoria-item">
+            <img src="img/shorts.jpg" alt="Chamarras">
+            <h4>Chamarras</h4>
           </a>
 
           <a href="accesorios.html" class="categoria-item">
@@ -90,11 +87,11 @@
           <li><a href="blusas.html">Blusas</a></li>
           <li><a href="faldas.html">Faldas</a></li>
           <li><a href="shorts.html">Shorts</a></li>
-          <li><a href="accesorios.html">Accesorios</a></li>
+          <li><a href="chamarras.html">Chamarras</a></li>
         </ul>
 
         <br><br>
-        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
+        <hr style="border: 0; border-top: 1px solid #c97a8e; margin-bottom: 20px;">
         <h2>Tu Carrito</h2>
         
         <ul id="lista-carrito" style="margin-bottom: 15px; font-size: 13px; color: #555;">
@@ -164,7 +161,7 @@
           } else {
               for (let i = 0; i < carrito.length; i++) {
                   let item = carrito[i];
-                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px;'>" + 
+                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" + 
                                          "<span>" + item.nombre + "</span>" + 
                                          "<span>$" + item.precio + "</span>" + 
                                          "</li>";

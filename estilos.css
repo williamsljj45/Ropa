@@ -6,22 +6,39 @@
 
 /* 1. FONDO LIMPIO Y TIPOGRAFÍA MODERNA */
 body {
-    background: #ffffff; /* Blanco puro */
+    /* 1. AGREGAMOS LA IMAGEN DE FONDO */
+    /* Cambia 'img/textura-fondo.jpg' por tu imagen real */
+    background-image: url('img/fondo2.jpeg'); 
+    
+    /* 2. CONFIGURACIONES PARA QUE SE VEA BIEN */
+    background-attachment: fixed; /* Hace que el fondo se quede quieto mientras bajas la página */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla sin repetirse como mosaico feo */
+    background-position: center center; /* Centra la imagen */
+    
+    /* Mantenemos tu tipografía y color de texto */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #111;
 }
 
 #container {
     width: 90%;
-    max-width: 1200px; /* Evita que la página se estire demasiado en pantallas gigantes */
-    margin: 0px auto;
-    /* Eliminamos el borde negro exterior */
+    max-width: 1200px; 
+    
+    /* CAMBIO AQUÍ: Redujimos el 20px a 0px para juntarlo hacia arriba */
+    margin: 0px auto 40px auto;
+	
+    background-color: #fae8eb; 
+    
+   padding: 40px; 
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1); 
+    border-radius: 10px;
+    overflow: hidden;
 }
-
 /* 2. ENCABEZADO ELEGANTE (Tipo revista) */
 header {
     text-align: center;
-    padding: 40px 0 20px 0; /* Más espacio arriba y abajo */
+    padding: 40px 0 20px 0; 
+    background-color: transparent; /* Fuerza a que no tenga color sólido */
 }
 
 header h1 {
@@ -34,8 +51,8 @@ header h1 {
 /* 3. MENÚ DE NAVEGACIÓN CENTRADO Y SUTIL */
 nav {
     padding: 15px 0;
-    border-top: 1px solid #eeeeee; 
-    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid #c97a8e; 
+    border-bottom: 1px solid #c97a8e;
     margin-bottom: 40px;
 }
 
@@ -80,7 +97,7 @@ aside {
     float: left;
     width: 25%; 
     padding-left: 20px;
-    border-left: 1px solid #eeeeee; /* Un separador vertical muy tenue */
+    border-left: 1px solid #c97a8e; 
 }
 
 /* DISEÑO DE LA BARRA LATERAL */
@@ -198,15 +215,14 @@ aside ul li a:hover {
 
 /* PIE DE PÁGINA LIMPIO */
 footer {
-    background: #ffffff; /* Le quitamos el fondo negro pesado */
-    color: #888888;
+    background: transparent; /* Lo hacemos transparente para que respete tu fondo rosa */
+    color: #888;
     text-align: center;
     padding: 40px 0;
     font-size: 12px;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid #c97a8e;
     margin-top: 50px;
 }
-
 /* =========================================
    ESTILOS DEL FORMULARIO DE CONTACTO
 ========================================= */
@@ -245,23 +261,36 @@ footer {
 }
 
 /* =========================================
-   NUEVOS ESTILOS DEL BANNER DE IMAGEN
+   ESTILOS DEL BANNER DE IMAGEN
 ========================================= */
 .image-banner-container {
-    width: 100%;
-    /* Le damos una altura máxima para que no ocupe toda la pantalla, 
-       muy al estilo sutil de Bershka */
-    height: 150px; 
-    overflow: hidden; /* Corta lo que sobre si la imagen es muy alta */
-    border-top: 1px solid #eeeeee; /* Un separador muy tenue */
-    border-bottom: 1px solid #eeeeee;
+
+    /* Le damos exactamente las mismas medidas que tu #container para que se alineen */
+
+    width: 90%;
+
+    max-width: 1200px; 
+
+    margin: 40px auto 0 auto; /* Centrado, con espacio arriba y pegado abajo */
+
+    
+
+    height: 200px; 
+
+    overflow: hidden;
+
+    border: none;
+
+    background-color: transparent; 
+
 }
 
 .image-banner {
     width: 100%;
-    height: 100%; /* Obliga a la imagen a llenar el contenedor */
-    object-fit: cover; /* Truco de HTML5 para que la foto se recorte bonita sin estirarse feo */
+    height: 100%;
+    object-fit: contain; 
     display: block;
+    margin: 0 auto; 
 }
 
 /* =========================================
@@ -313,7 +342,7 @@ footer {
 
 .menu-lateral li {
     margin-bottom: 12px;
-    border-bottom: 1px dashed #eee;
+    border-bottom: 1px dashed #c97a8e;
     padding-bottom: 5px;
 }
 
@@ -326,9 +355,10 @@ footer {
     /* Hacemos que el contenedor ocupe casi toda la pantalla */
     #container {
         width: 95%;
+        /* Reducimos el borde interior en celulares para no aplastar el contenido */
+        padding: 15px; 
     }
-
-    /* El contenido principal ya no flota a la izquierda, ocupa el 100% */
+	
     #content {
         float: none;
         width: 100%;
@@ -363,4 +393,35 @@ footer {
     .hero-section img {
         height: 250px;
     }
+	
+	/* =========================================
+   ESTILOS PARA PRENDAS VENDIDAS (BAZAR)
+========================================= */
+
+/* Opaca la imagen y la pone en blanco y negro */
+.articulo-producto.vendido .img-producto {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+/* Tacha el precio para dar a entender que ya se fue */
+.articulo-producto.vendido .precio {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Un botón gris que no hace nada cuando le das clic */
+.btn-agotado {
+    background: #eeeeee;
+    color: #888888;
+    border: 1px solid #cccccc;
+    padding: 12px 0;
+    width: 100%; 
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: not-allowed; /* Cambia el cursor a un símbolo de prohibido */
+}
+	
 }

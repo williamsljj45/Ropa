@@ -2,20 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>A&W - Shorts</title>
+  <title>A&W - Chamarras</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 
 <body>
+	
+	<div class="image-banner-container">
+        <img src="img/banner.png" alt="A&W Promoción" class="image-banner">
+      </div>
+	
   <div id="container">
 
    <header>
-        <h1>Shorts</h1>
+        <h1>Chamarras</h1>
       </header>
-
-      <div class="image-banner-container">
-        <img src="img/banner1.jpg" alt="A&W Promoción" width="885" height="200" class="image-banner">
-      </div>
 
       <nav>
         <ul>
@@ -60,12 +61,12 @@
           <li><a href="pantalones.html">Pantalones</a></li>
           <li><a href="blusas.html">Blusas</a></li>
           <li><a href="faldas.html">Faldas</a></li>
-          <li><a href="shorts.html">Shorts</a></li>
+          <li><a href="chamarras.html">Chamarras</a></li>
           <li><a href="accesorios.html">Accesorios</a></li>
         </ul>
 
         <br><br>
-        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
+       <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
         <h2>Tu Carrito</h2>
         
         <ul id="lista-carrito" style="margin-bottom: 15px; font-size: 13px; color: #555;">
@@ -80,8 +81,13 @@
           Vaciar Carrito
         </button>
 
-      </aside>
+     </aside>
+
     <div class="clearfix"></div>
+
+    <a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); z-index: 1000;">
+      🛒 Pagar Pedido en WhatsApp
+    </a>
 
     <footer>
       Proyecto final WEB &copy; 2026 - Williams
@@ -89,7 +95,7 @@
 
   </div>
 	
-	 <script>
+	<script>
       // 1. En lugar de empezar en 0, leemos la "libreta" (localStorage). 
       // JSON.parse traduce el texto guardado de vuelta a código que la página entienda.
       let carrito = JSON.parse(localStorage.getItem('miCarritoAW')) || [];
@@ -130,7 +136,7 @@
           } else {
               for (let i = 0; i < carrito.length; i++) {
                   let item = carrito[i];
-                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px;'>" + 
+                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" + 
                                          "<span>" + item.nombre + "</span>" + 
                                          "<span>$" + item.precio + "</span>" + 
                                          "</li>";
@@ -172,6 +178,7 @@
       // Ejecutamos la función de arranque justo cuando carga el script
       inicializarPagina();
     </script>
+	  
 	
 </body>
 </html>
