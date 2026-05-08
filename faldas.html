@@ -7,24 +7,27 @@
 </head>
 
 <body>
-	
-	<div class="image-banner-container">
-        <img src="img/banner.png" alt="A&W Promoción" class="image-banner">
-      </div>
-	
-  <div id="container">
+    <div id="container">
 
-    <header>
-        <h1>Faldas</h1>
+      <header class="header-moderno">
+        <div class="logo-nav">
+          <a href="index.html" style="text-decoration: none; color: #7a2035; font-size: 18px; font-weight: bold; font-family: 'Playfair Display', serif;">
+            🧥 A&W Bazar
+          </a>
+        </div>
+        <nav class="menu-central">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="vestidos.html">Tienda</a></li>
+            <li><a href="contacto.html">Preguntas Frecuentes</a></li>
+          </ul>
+        </nav>
+        <div class="iconos-nav">
+          <a href="javascript:void(0)" onclick="abrirCarrito()" style="text-decoration: none; font-size: 20px; color: #7a2035;">
+            🛍️
+          </a>
+        </div>
       </header>
-
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-
     <div class="clearfix"></div>
 
     <section id="content">
@@ -47,67 +50,69 @@
         </div>
     </section>
 
-  <aside>
-        <h2>Buscador</h2>
-        <form>
-          <input type="text" placeholder="Buscar prenda...">
-          <input type="submit" value="Buscar" />
-        </form>
-        <br>
+   <div class="sostenibilidad-container">
+        <h2>Comprometidas con la Sostenibilidad y el Amor</h2>
+        <div class="sostenibilidad-textos">
+          <p>En A&W Bazar creemos que la moda de segunda mano no es solo una tendencia, sino una elección consciente. Seleccionamos cada prenda con el cuidado de una pieza única, asegurando que cada mujer encuentre lo que mejor se adapte a su estilo y a su compromiso con el planeta.</p>
+          <p>Nuestro servicio es el corazón de nuestra experiencia. Ofrecemos una atención personalizada y una confianza absoluta en cada consulta, transformando el proceso de compra en una experiencia de exclusividad y calidez.</p>
+        </div>
+      </div>
+
+      <footer class="footer-moderno">
         
-        <h2>Categorías</h2>
-        <ul class="menu-lateral">
-          <li><a href="vestidos.html">Vestidos</a></li>
-          <li><a href="pantalones.html">Pantalones</a></li>
-          <li><a href="blusas.html">Blusas</a></li>
-          <li><a href="faldas.html">Faldas</a></li>
-          <li><a href="shorts.html">Shorts</a></li>
-          <li><a href="accesorios.html">Accesorios</a></li>
-        </ul>
-
-        <br><br>
-        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
-        <h2>Tu Carrito</h2>
+        <div class="footer-col" style="font-size: 18px; font-weight: bold; font-family: 'Playfair Display', serif;">
+          🧥 A&W Bazar
+        </div>
         
-        <ul id="lista-carrito" style="margin-bottom: 15px; font-size: 13px; color: #555;">
-          <li>El carrito está vacío</li>
-        </ul>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>Tijuana, B.C.</p>
+          <p>hola@awbazar.com</p>
+        </div>
         
-        <p style="font-size: 14px; color: #000; margin-bottom: 15px;">
-          <strong>Total: $<span id="total-carrito">0</span> MXN</strong>
-        </p>
+        <div class="footer-col">
+          <h4>Nuestra Esencia</h4>
+          <p>Ropa única, amorosa y asequible.<br>Descubre la belleza en cada prenda de segunda mano.</p>
+        </div>
+        
+        <div class="footer-col" style="text-align: right;">
+          <p>&copy; 2026 A&W Bazar.<br>Todos los derechos reservados.<br>Proyecto final WEB - Williams.</p>
+        </div>
+        
+      </footer>
 
-        <button onclick="vaciarCarrito()" style="background: transparent; border: 1px solid #cc0000; color: #cc0000; padding: 8px 0; cursor: pointer; width: 100%; text-transform: uppercase; font-size: 11px; font-weight: bold; transition: 0.3s;">
-          Vaciar Carrito
-        </button>
+    </div> <div id="fondo-oscuro" class="fondo-oscuro" onclick="cerrarCarrito()"></div>
 
-      </aside>
+    <div id="carrito-lateral">
+      <button class="btn-cerrar-carrito" onclick="cerrarCarrito()">✖</button>
+      <h2 style="font-size: 24px; margin-bottom: 20px; color: #7a2035; text-align: center; font-weight: bold;">Tu Carrito</h2>
 
-    <div class="clearfix"></div>
+      <ul id="lista-carrito" style="list-style: none; margin: 0 auto 20px auto; text-align: left; font-size: 14px; color: #7a2035;">
+        <li>El carrito está vacío</li>
+      </ul>
 
-    <a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); z-index: 1000;">
-      🛒 Pagar Pedido en WhatsApp
+      <p style="font-size: 18px; margin-bottom: 20px; color: #7a2035; text-align: center;">
+        <strong>Total: $<span id="total-carrito">0</span> MXN</strong>
+      </p>
+
+      <button onclick="vaciarCarrito()" style="background: transparent; border: 1px solid #7a2035; color: #7a2035; padding: 10px 20px; cursor: pointer; text-transform: uppercase; font-size: 12px; font-weight: bold; width: 100%;">
+        Vaciar Carrito
+      </button>
+    </div>
+
+    <a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s; z-index: 1000;">
+      🛒 Pagar Pedido
     </a>
 
-    <footer>
-      Proyecto final WEB &copy; 2026 - Williams
-    </footer>
-
-  </div>
-	
-	 <script>
-      // 1. En lugar de empezar en 0, leemos la "libreta" (localStorage). 
-      // JSON.parse traduce el texto guardado de vuelta a código que la página entienda.
+    <script>
       let carrito = JSON.parse(localStorage.getItem('miCarritoAW')) || [];
       let total = parseFloat(localStorage.getItem('miTotalAW')) || 0;
-      
-      let miNumeroDeWhatsApp = "526640000000"; 
+      let miNumeroDeWhatsApp = "526641811247";
 
-      // 2. Esta función arranca solita cada vez que abres CUALQUIER página
       function inicializarPagina() {
           actualizarCarritoVisual();
           if(carrito.length > 0) {
-              prepararWhatsApp(); // Si hay algo en la memoria, mostramos el botón
+              prepararWhatsApp();
           }
       }
 
@@ -115,19 +120,19 @@
           carrito.push({ nombre: nombrePrenda, precio: precioPrenda });
           total = total + precioPrenda;
 
-          // GUARDAR EN LA MEMORIA (Anotamos en la libreta)
           localStorage.setItem('miCarritoAW', JSON.stringify(carrito));
           localStorage.setItem('miTotalAW', total);
 
           actualizarCarritoVisual();
           prepararWhatsApp();
+          abrirCarrito();
       }
 
       function actualizarCarritoVisual() {
           let listaHTML = document.getElementById("lista-carrito");
           let totalHTML = document.getElementById("total-carrito");
 
-          if (!listaHTML || !totalHTML) return; // Evita errores si la barra lateral no ha cargado
+          if (!listaHTML || !totalHTML) return;
 
           listaHTML.innerHTML = "";
 
@@ -136,9 +141,9 @@
           } else {
               for (let i = 0; i < carrito.length; i++) {
                   let item = carrito[i];
-                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" + 
-                                         "<span>" + item.nombre + "</span>" + 
-                                         "<span>$" + item.precio + "</span>" + 
+                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" +
+                                         "<span>" + item.nombre + "</span>" +
+                                         "<span>$" + item.precio + "</span>" +
                                          "</li>";
               }
           }
@@ -149,7 +154,6 @@
           carrito = [];
           total = 0;
 
-          // BORRAMOS LA MEMORIA
           localStorage.removeItem('miCarritoAW');
           localStorage.removeItem('miTotalAW');
 
@@ -175,10 +179,17 @@
           }
       }
 
-      // Ejecutamos la función de arranque justo cuando carga el script
+      function abrirCarrito() {
+          document.getElementById("carrito-lateral").classList.add("abierto");
+          document.getElementById("fondo-oscuro").classList.add("activo");
+      }
+
+      function cerrarCarrito() {
+          document.getElementById("carrito-lateral").classList.remove("abierto");
+          document.getElementById("fondo-oscuro").classList.remove("activo");
+      }
+
       inicializarPagina();
     </script>
-	  
-	
-</body>
+  </body>
 </html>

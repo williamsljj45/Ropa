@@ -5,134 +5,146 @@
    <title>A&W Tienda de Ropa</title>
    <link rel="stylesheet" href="estilos.css" />
   </head>
-  
+
   <body>
-	  
-	  <div class="image-banner-container">
-        <img src="img/banner.png" alt="A&W Promoción" class="image-banner">
-      </div>
-	  
     <div id="container">
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-		
+      <header class="header-moderno">
+        <div class="logo-nav">
+          <a href="index.html" style="text-decoration: none; color: #7a2035; font-size: 18px; font-weight: bold; font-family: 'Playfair Display', serif;">
+            🧥 A&W Bazar
+          </a>
+        </div>
+        <nav class="menu-central">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="vestidos.html">Tienda</a></li>
+            <li><a href="contacto.html">Preguntas Frecuentes</a></li>
+          </ul>
+        </nav>
+        <div class="iconos-nav">
+          <a href="javascript:void(0)" onclick="abrirCarrito()" style="text-decoration: none; font-size: 20px; color: #7a2035;">
+            🛍️
+          </a>
+        </div>
+      </header>
+
       <div class="clearfix"></div>
 
-   <section id="content">
-        
-        <div class="hero-section" style="margin-bottom: 50px;">
-          <img src="img/banner3.png" alt="Nueva Colección" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 15px;">
-          <div style="text-align: center;">
-            <h2 style="font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Conoce nuestro bazar</h2>
-            <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Descubre la ropa de segunda mano que definirá tu estilo.</p>
-            <a href="vestidos.html" class="btn-comprar" style="display: inline-block; width: auto; padding: 12px 40px; text-decoration: none;">Ver lo más nuevo</a>
+      <section id="content">
+
+        <div class="hero-section" style="position: relative; margin-bottom: 60px; text-align: center;">
+          <img src="img/banner3.png" alt="A&W Bazar" style="width: 100%; height: 400px; object-fit: cover; border-radius: 4px;">
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; padding: 0 20px;">
+            <h2 style="color: white; font-size: 38px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4); margin-bottom: 25px; font-weight: bold; letter-spacing: 1px;">Ropa única, amorosa y asequible</h2>
+            <a href="vestidos.html" class="btn-comprar" style="display: inline-block; width: auto; padding: 12px 30px; text-decoration: none;">Explorar Colección</a>
           </div>
         </div>
 
-       <h3 style="text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid #c97a8e; padding-bottom: 10px;">Compra por categoría</h3>
-        
-        <div class="categorias-grid">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+          <h3 class="titulo-seccion" style="margin-bottom: 0;">Destacados de la Colección</h3>
+          <a href="vestidos.html" style="color: #7a2035; text-decoration: none; border: 1px solid #fae8eb; padding: 8px 15px; font-size: 13px; border-radius: 4px;">Ver Todo</a>
+        </div>
+
+        <div class="carrusel-wrapper" style="position: relative; padding: 0 20px; margin-bottom: 60px;">
           
-          <a href="vestidos.html" class="categoria-item">
-            <img src="img/vestidos.jpg" alt="Vestidos">
-            <h4>Vestidos</h4>
-          </a>
+          <button class="btn-carrusel prev" onclick="moverCarrusel(-1)">&#10094;</button>
 
-          <a href="pantalones.html" class="categoria-item">
-            <img src="img/pantalones.jpg" alt="Pantalones">
-            <h4>Pantalones</h4>
-          </a>
+          <div class="carrusel-contenedor" id="carrusel-inicio">
+            
+            <a href="vestidos.html" class="categoria-item">
+              <img src="img/vestidos.jpg" alt="Vestidos">
+              <h4>Vestidos</h4>
+            </a>
+            
+            <a href="pantalones.html" class="categoria-item">
+              <img src="img/pantalones.jpg" alt="Pantalones">
+              <h4>Pantalones</h4>
+            </a>
+            
+            <a href="blusas.html" class="categoria-item">
+              <img src="img/blusas.jpg" alt="Blusas">
+              <h4>Blusas</h4>
+            </a>
+            
+            <a href="faldas.html" class="categoria-item">
+              <img src="img/faldas.jpg" alt="Faldas">
+              <h4>Faldas</h4>
+            </a>
+            
+            <a href="chamarras.html" class="categoria-item">
+              <img src="img/shorts.jpg" alt="Chamarras">
+              <h4>Chamarras</h4>
+            </a>
+            
+            <a href="accesorios.html" class="categoria-item">
+              <img src="img/accesorios.jpg" alt="Accesorios">
+              <h4>Accesorios</h4>
+            </a>
 
-          <a href="blusas.html" class="categoria-item">
-            <img src="img/blusas.jpg" alt="Blusas">
-            <h4>Blusas</h4>
-          </a>
+          </div>
 
-          <a href="faldas.html" class="categoria-item">
-            <img src="img/faldas.jpg" alt="Faldas">
-            <h4>Faldas</h4>
-          </a>
-
-          <a href="chamarras.html" class="categoria-item">
-            <img src="img/shorts.jpg" alt="Chamarras">
-            <h4>Chamarras</h4>
-          </a>
-
-          <a href="accesorios.html" class="categoria-item">
-            <img src="img/accesorios.jpg" alt="Accesorios">
-            <h4>Accesorios</h4>
-          </a>
-
+          <button class="btn-carrusel next" onclick="moverCarrusel(1)">&#10095;</button>
+          
         </div>
 
       </section>
 
-      <aside>
-        <h2>Buscador</h2>
-        <form>
-          <input type="text" placeholder="Buscar prenda...">
-          <input type="submit" value="Buscar" />
-        </form>
-        <br>
-        
-        <h2>Categorías</h2>
-        <ul class="menu-lateral">
-          <li><a href="vestidos.html">Vestidos</a></li>
-          <li><a href="pantalones.html">Pantalones</a></li>
-          <li><a href="blusas.html">Blusas</a></li>
-          <li><a href="faldas.html">Faldas</a></li>
-          <li><a href="shorts.html">Shorts</a></li>
-          <li><a href="chamarras.html">Chamarras</a></li>
-        </ul>
+      <div class="sostenibilidad-container">
+        <h2>Comprometidas con la Sostenibilidad y el Amor</h2>
+        <div class="sostenibilidad-textos">
+          <p>En A&W Bazar creemos que la moda de segunda mano no es solo una tendencia, sino una elección consciente. Seleccionamos cada prenda con el cuidado de una pieza única, asegurando que cada mujer encuentre lo que mejor se adapte a su estilo y a su compromiso con el planeta.</p>
+          <p>Nuestro servicio es el corazón de nuestra experiencia. Ofrecemos una atención personalizada y una confianza absoluta en cada consulta, transformando el proceso de compra en una experiencia de exclusividad y calidez.</p>
+        </div>
+      </div>
 
-        <br><br>
-        <hr style="border: 0; border-top: 1px solid #c97a8e; margin-bottom: 20px;">
-        <h2>Tu Carrito</h2>
-        
-        <ul id="lista-carrito" style="margin-bottom: 15px; font-size: 13px; color: #555;">
-          <li>El carrito está vacío</li>
-        </ul>
-        
-        <p style="font-size: 14px; color: #000; margin-bottom: 15px;">
-          <strong>Total: $<span id="total-carrito">0</span> MXN</strong>
-        </p>
-
-        <button onclick="vaciarCarrito()" style="background: transparent; border: 1px solid #cc0000; color: #cc0000; padding: 8px 0; cursor: pointer; width: 100%; text-transform: uppercase; font-size: 11px; font-weight: bold; transition: 0.3s;">
-          Vaciar Carrito
-        </button>
-
-      </aside>
-
-      <div class="clearfix"></div>
-
-		<a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s;">
-        🛒 Pagar Pedido en WhatsApp
-      </a>
-		
-      <footer>
-        Proyecto final WEB &copy; 2026 - Williams
+      <footer class="footer-moderno">
+        <div class="footer-col" style="font-size: 18px; font-weight: bold; font-family: 'Playfair Display', serif;">
+          🧥 A&W Bazar
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>Tijuana, B.C.</p>
+          <p>hola@awbazar.com</p>
+        </div>
+        <div class="footer-col">
+          <h4>Nuestra Esencia</h4>
+          <p>Ropa única, amorosa y asequible.<br>Descubre la belleza en cada prenda de segunda mano.</p>
+        </div>
+        <div class="footer-col" style="text-align: right;">
+          <p>&copy; 2026 A&W Bazar.<br>Todos los derechos reservados.<br>Proyecto final WEB - Williams.</p>
+        </div>
       </footer>
 
+    </div> <div id="fondo-oscuro" class="fondo-oscuro" onclick="cerrarCarrito()"></div>
+
+    <div id="carrito-lateral">
+      <button class="btn-cerrar-carrito" onclick="cerrarCarrito()">✖</button>
+      <h2 style="font-size: 24px; margin-bottom: 20px; color: #7a2035; text-align: center; font-weight: bold;">Tu Carrito</h2>
+      <ul id="lista-carrito" style="list-style: none; margin: 0 auto 20px auto; text-align: left; font-size: 14px; color: #7a2035;">
+        <li>El carrito está vacío</li>
+      </ul>
+      <p style="font-size: 18px; margin-bottom: 20px; color: #7a2035; text-align: center;">
+        <strong>Total: $<span id="total-carrito">0</span> MXN</strong>
+      </p>
+      <button onclick="vaciarCarrito()" style="background: transparent; border: 1px solid #7a2035; color: #7a2035; padding: 10px 20px; cursor: pointer; text-transform: uppercase; font-size: 12px; font-weight: bold; width: 100%;">
+        Vaciar Carrito
+      </button>
     </div>
-	  
-	<script>
-      // 1. En lugar de empezar en 0, leemos la "libreta" (localStorage). 
-      // JSON.parse traduce el texto guardado de vuelta a código que la página entienda.
+
+    <a id="btn-whatsapp" href="#" target="_blank" style="display:none; position:fixed; bottom:30px; right:30px; background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:50px; font-weight:bold; font-family:Arial; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s; z-index: 1000;">
+      🛒 Pagar Pedido
+    </a>
+
+    <script>
       let carrito = JSON.parse(localStorage.getItem('miCarritoAW')) || [];
       let total = parseFloat(localStorage.getItem('miTotalAW')) || 0;
-      
-      let miNumeroDeWhatsApp = "526640000000"; 
+      let miNumeroDeWhatsApp = "526641811247";
 
-      // 2. Esta función arranca solita cada vez que abres CUALQUIER página
       function inicializarPagina() {
           actualizarCarritoVisual();
           if(carrito.length > 0) {
-              prepararWhatsApp(); // Si hay algo en la memoria, mostramos el botón
+              prepararWhatsApp();
           }
       }
 
@@ -140,19 +152,19 @@
           carrito.push({ nombre: nombrePrenda, precio: precioPrenda });
           total = total + precioPrenda;
 
-          // GUARDAR EN LA MEMORIA (Anotamos en la libreta)
           localStorage.setItem('miCarritoAW', JSON.stringify(carrito));
           localStorage.setItem('miTotalAW', total);
 
           actualizarCarritoVisual();
           prepararWhatsApp();
+          abrirCarrito();
       }
 
       function actualizarCarritoVisual() {
           let listaHTML = document.getElementById("lista-carrito");
           let totalHTML = document.getElementById("total-carrito");
 
-          if (!listaHTML || !totalHTML) return; // Evita errores si la barra lateral no ha cargado
+          if (!listaHTML || !totalHTML) return;
 
           listaHTML.innerHTML = "";
 
@@ -161,9 +173,9 @@
           } else {
               for (let i = 0; i < carrito.length; i++) {
                   let item = carrito[i];
-                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" + 
-                                         "<span>" + item.nombre + "</span>" + 
-                                         "<span>$" + item.precio + "</span>" + 
+                  listaHTML.innerHTML += "<li style='display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #c97a8e; padding-bottom: 4px;'>" +
+                                         "<span>" + item.nombre + "</span>" +
+                                         "<span>$" + item.precio + "</span>" +
                                          "</li>";
               }
           }
@@ -174,7 +186,6 @@
           carrito = [];
           total = 0;
 
-          // BORRAMOS LA MEMORIA
           localStorage.removeItem('miCarritoAW');
           localStorage.removeItem('miTotalAW');
 
@@ -200,9 +211,30 @@
           }
       }
 
-      // Ejecutamos la función de arranque justo cuando carga el script
+      function abrirCarrito() {
+          document.getElementById("carrito-lateral").classList.add("abierto");
+          document.getElementById("fondo-oscuro").classList.add("activo");
+      }
+
+      function cerrarCarrito() {
+          document.getElementById("carrito-lateral").classList.remove("abierto");
+          document.getElementById("fondo-oscuro").classList.remove("activo");
+      }
+	// Mueve el carrusel calculando el ancho exacto
+      function moverCarrusel(direccion) {
+          let carrusel = document.getElementById("carrusel-inicio");
+          if(carrusel) {
+              // Tomamos la medida exacta de la primera tarjeta en esa pantalla
+              let tarjeta = carrusel.querySelector('.categoria-item');
+              
+              // Sumamos el ancho de la tarjeta más los 20px de separación (gap)
+              let distancia = (tarjeta.offsetWidth + 20) * direccion; 
+              
+              carrusel.scrollBy({ left: distancia, behavior: 'smooth' });
+          }
+      }
+
       inicializarPagina();
     </script>
-	  
   </body>
 </html>

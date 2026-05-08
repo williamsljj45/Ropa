@@ -1,236 +1,327 @@
+/* =========================================
+   1. RESET Y BASE
+========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
 }
 
-/* 1. FONDO LIMPIO Y TIPOGRAFÍA MODERNA */
 body {
-    /* 1. AGREGAMOS LA IMAGEN DE FONDO */
-    /* Cambia 'img/textura-fondo.jpg' por tu imagen real */
-    background-image: url('img/fondo2.jpeg'); 
-    
-    /* 2. CONFIGURACIONES PARA QUE SE VEA BIEN */
-    background-attachment: fixed; /* Hace que el fondo se quede quieto mientras bajas la página */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla sin repetirse como mosaico feo */
-    background-position: center center; /* Centra la imagen */
-    
-    /* Mantenemos tu tipografía y color de texto */
+    background-color: #FFEEF8; /* Rosa pastel ultra tenue */
+    background-image: none; 
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #111;
+    color: #7a2035; 
 }
 
 #container {
-    width: 90%;
-    max-width: 1200px; 
-    
-    /* CAMBIO AQUÍ: Redujimos el 20px a 0px para juntarlo hacia arriba */
-    margin: 0px auto 40px auto;
-	
-    background-color: #fae8eb; 
-    
-   padding: 40px; 
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1); 
-    border-radius: 10px;
+    width: 98%; 
+    max-width: 100%; 
+    margin: 0 auto; 
+    background-color: transparent; 
+    padding: 0; 
+    box-shadow: none; 
+    border-radius: 0;
     overflow: hidden;
 }
-/* 2. ENCABEZADO ELEGANTE (Tipo revista) */
-header {
-    text-align: center;
-    padding: 40px 0 20px 0; 
-    background-color: transparent; /* Fuerza a que no tenga color sólido */
-}
 
-header h1 {
-    font-family: 'Playfair Display', serif; /* Tu fuente original, muy buena elección */
-    font-size: 40px;
-    letter-spacing: 5px; /* Separamos las letras para darle estilo premium */
-    text-transform: uppercase; /* Todo en mayúsculas */
-}
-
-/* 3. MENÚ DE NAVEGACIÓN CENTRADO Y SUTIL */
-nav {
-    padding: 15px 0;
-    border-top: 1px solid #c97a8e; 
-    border-bottom: 1px solid #c97a8e;
-    margin-bottom: 40px;
-}
-
-/* AQUÍ ESTÁ LA MAGIA PARA QUE SEA HORIZONTAL */
-nav ul {
+/* =========================================
+   2. ENCABEZADO BOUTIQUE
+========================================= */
+.header-moderno {
     display: flex;
-    flex-wrap: wrap; /* Si la pantalla es pequeña, los enlaces bajan de renglón suavemente */
-    justify-content: center;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 0;
+    border-bottom: none; 
+    margin-bottom: 0px; 
+}
+
+.menu-central ul {
+    display: flex;
     list-style: none;
+    gap: 30px; 
 }
 
-nav ul li {
-    margin: 5px 15px; /* Reduje un poco el margen para que quepan todos tus nuevos enlaces */
-}
-
-nav ul li a {
+.menu-central a {
     text-decoration: none;
-    color: #000;
+    color: #7a2035;
     font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s; 
+    font-weight: 500;
+    transition: opacity 0.3s;
 }
 
-nav ul li a:hover {
-    color: #888888; 
+.menu-central a:hover {
+    opacity: 0.6; 
+}
+
+/* =========================================
+   3. TÍTULOS Y BOTONES GLOBALES
+========================================= */
+.titulo-seccion {
+    color: #7a2035;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-bottom: none; 
+}
+
+.btn-comprar {
+    background-color: #7a2035;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: 100%; 
+    font-size: 14px;
+    font-weight: normal; 
+    transition: opacity 0.3s;
+    border-radius: 4px; 
+}
+
+.btn-comprar:hover {
+    background-color: #7a2035;
+    color: #ffffff;
+    opacity: 0.8; 
 }
 
 .clearfix {
     clear: both;
 }
 
-/* 4. AJUSTE DE COLUMNAS (Sin bordes duros) */
-#content {
-    float: left;
-    width: 75%; /* Ajustamos los porcentajes para dar más aire */
-    padding-right: 40px;
-}
-
-aside {
-    float: left;
-    width: 25%; 
-    padding-left: 20px;
-    border-left: 1px solid #c97a8e; 
-}
-
-/* DISEÑO DE LA BARRA LATERAL */
-aside h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    color: #555;
-}
-
-aside input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    margin-bottom: 10px;
-    font-family: inherit;
-}
-
-aside input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-aside ul {
-    list-style: none;
-}
-
-aside ul li {
-    margin-bottom: 10px;
-}
-
-aside ul li a {
-    text-decoration: none;
-    color: #777;
-    font-size: 14px;
-}
-
-aside ul li a:hover {
-    color: #000;
-}
-
 /* =========================================
-   NUEVOS ESTILOS PARA LA TIENDA DE ROPA
+   4. PRODUCTOS Y CATEGORÍAS (CUADRÍCULA)
 ========================================= */
-
-.productos-grid {
+.productos-grid, .categorias-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Más espacio entre los productos */
+    gap: 20px;
+    justify-content: flex-start; 
 }
 
-.articulo-producto {
-    width: calc(50% - 15px); 
-    text-align: center;
-    /* Eliminamos el borde de la tarjeta para que la foto sea lo principal */
+.articulo-producto, .categoria-item {
+    width: calc(25% - 15px); /* 4 elementos por fila */
+    text-align: left; 
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #7a2035;
 }
 
-/* EL TRUCO PARA QUE LAS FOTOS SE VEAN PROFESIONALES */
-.img-producto {
+.img-producto, .categoria-item img {
     width: 100%;
-    height: 450px; /* Un poco más altas, formato retrato */
-    object-fit: cover; 
-    margin-bottom: 15px;
-    transition: transform 0.4s ease; /* Prepara la imagen para una animación */
+    height: 280px; 
+    object-fit: cover;
+    border-radius: 4px; 
+    margin-bottom: 12px;
+    transition: transform 0.4s ease;
 }
 
-/* Animación: la foto hace un ligero zoom cuando le pasas el mouse */
-.articulo-producto:hover .img-producto {
-    transform: scale(1.03);
+.articulo-producto:hover .img-producto, .categoria-item:hover img {
+    transform: scale(1.03); /* Efecto zoom suave */
 }
 
-.articulo-producto h2 {
+.articulo-producto h2, .categoria-item h4 {
     font-size: 14px;
-    text-transform: uppercase;
-    font-weight: normal;
-    margin-bottom: 8px;
-    color: #333;
+    text-transform: none; 
+    font-weight: bold;
+    color: #7a2035;
+    margin-bottom: 4px;
+    letter-spacing: 0;
 }
 
 .precio {
-    font-size: 14px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 15px;
+    font-size: 13px;
+    color: #7a2035;
+    font-weight: normal;
+    margin-bottom: 10px;
 }
 
-/* BOTONES ESTILO MODERNO (Fondo transparente, borde negro) */
-.btn-comprar {
-    background: transparent;
-    color: #000;
-    border: 1px solid #000;
+/* --- ESTILOS PARA PRENDAS VENDIDAS --- */
+.articulo-producto.vendido .img-producto {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.articulo-producto.vendido .precio {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.btn-agotado {
+    background: #eeeeee;
+    color: #888888;
+    border: 1px solid #cccccc;
     padding: 12px 0;
-    cursor: pointer;
     width: 100%; 
     text-transform: uppercase;
     font-size: 11px;
     letter-spacing: 1px;
     font-weight: bold;
-    transition: all 0.3s;
+    cursor: not-allowed;
+    border-radius: 4px;
 }
 
-/* El botón se invierte a negro cuando lo tocas */
-.btn-comprar:hover {
-    background: #000;
+/* =========================================
+   5. CARRUSEL INICIO (DESLIZADOR)
+========================================= */
+.carrusel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap; 
+    width: 100%;
+    padding-bottom: 15px; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    
+    /* MAGIA AQUÍ: Agregamos el efecto imán obligatorio */
+    scroll-snap-type: x mandatory; 
+}
+
+.carrusel-contenedor::-webkit-scrollbar {
+    display: none; 
+}
+
+.carrusel-contenedor .categoria-item {
+    flex: 0 0 calc(25% - 15px); 
+    min-width: 260px; 
+    margin-bottom: 0; 
+    
+    /* MAGIA AQUÍ: Le decimos que el imán atrape el inicio de cada foto */
+    scroll-snap-align: start; 
+}
+
+.btn-carrusel {
+    position: absolute;
+    background-color: #fae8eb;
+    color: #7a2035;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.btn-carrusel:hover {
+    background-color: #7a2035;
     color: #fff;
 }
 
-/* PIE DE PÁGINA LIMPIO */
-footer {
-    background: transparent; /* Lo hacemos transparente para que respete tu fondo rosa */
-    color: #888;
-    text-align: center;
-    padding: 40px 0;
-    font-size: 12px;
-    border-top: 1px solid #c97a8e;
-    margin-top: 50px;
-}
+.btn-carrusel.prev { left: -10px; }
+.btn-carrusel.next { right: -10px; }
+
 /* =========================================
-   ESTILOS DEL FORMULARIO DE CONTACTO
+   6. CARRITO LATERAL
+========================================= */
+#carrito-lateral {
+    position: fixed;
+    top: 0;
+    right: -400px; 
+    width: 350px;
+    height: 100vh;
+    background-color: #FFEEF8; 
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 2000;
+    padding: 40px 20px;
+    transition: right 0.4s ease; 
+    overflow-y: auto;
+}
+
+#carrito-lateral.abierto { right: 0; }
+
+.btn-cerrar-carrito {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #7a2035;
+    cursor: pointer;
+}
+
+.fondo-oscuro {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    display: none; 
+}
+
+.fondo-oscuro.activo { display: block; }
+
+/* =========================================
+   7. SOSTENIBILIDAD Y FOOTER
+========================================= */
+.sostenibilidad-container {
+    background-color: #fae8eb; 
+    padding: 60px 40px;
+    text-align: center;
+    margin: 60px 0; 
+    border-radius: 4px;
+}
+
+.sostenibilidad-container h2 {
+    color: #7a2035;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.sostenibilidad-textos {
+    display: flex;
+    gap: 40px; 
+    text-align: center;
+    color: #7a2035;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.sostenibilidad-textos p { flex: 1; }
+
+.footer-moderno {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-top: 1px solid #fae8eb; 
+    color: #7a2035;
+    font-size: 12px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.footer-col { flex: 1; }
+
+.footer-col h4 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* =========================================
+   8. FORMULARIO DE CONTACTO
 ========================================= */
 .formulario-contacto {
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    margin: 0 auto; /* Centra el formulario */
+    margin: 0 auto; 
 }
 
 .formulario-contacto label {
@@ -253,175 +344,52 @@ footer {
 
 .formulario-contacto textarea {
     height: 120px;
-    resize: vertical; /* Solo permite hacer más grande el cuadro hacia abajo */
+    resize: vertical; 
 }
 
-.formulario-contacto button {
-    margin-top: 30px;
-}
+.formulario-contacto button { margin-top: 30px; }
+
 
 /* =========================================
-   ESTILOS DEL BANNER DE IMAGEN
+   9. DISEÑO RESPONSIVO (CELULARES Y TABLETS)
 ========================================= */
-.image-banner-container {
-
-    /* Le damos exactamente las mismas medidas que tu #container para que se alineen */
-
-    width: 90%;
-
-    max-width: 1200px; 
-
-    margin: 40px auto 0 auto; /* Centrado, con espacio arriba y pegado abajo */
-
-    
-
-    height: 200px; 
-
-    overflow: hidden;
-
-    border: none;
-
-    background-color: transparent; 
-
-}
-
-.image-banner {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    display: block;
-    margin: 0 auto; 
-}
-
-/* =========================================
-   AJUSTE PARA CELULARES (RESPONSIVE)
-========================================= */
-/* Agrega esto dentro de tu Media Query (@media (max-width: 768px)) si ya la tienes, 
-   o pégalo aquí abajo */
-@media (max-width: 768px) {
-    .image-banner-container {
-        height: 80px; /* Hacemos el banner más bajito en celular */
-    }
-}
-/* =========================================
-   ESTILOS DE LAS CATEGORÍAS VISUALES (INICIO)
-========================================= */
-.categorias-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.categoria-item {
-    width: 30%; /* Caben 3 por fila en computadora */
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.categoria-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.categoria-item:hover img {
-    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
-}
-
-.categoria-item h4 {
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.menu-lateral li {
-    margin-bottom: 12px;
-    border-bottom: 1px dashed #c97a8e;
-    padding-bottom: 5px;
-}
-
-/* =========================================
-   DISEÑO RESPONSIVO (LA MAGIA PARA CELULARES)
-========================================= */
-/* Todo lo que esté aquí adentro solo se aplica si la pantalla mide 768px o menos (celulares y tablets) */
 @media (max-width: 768px) {
     
-    /* Hacemos que el contenedor ocupe casi toda la pantalla */
     #container {
         width: 95%;
-        /* Reducimos el borde interior en celulares para no aplastar el contenido */
-        padding: 15px; 
+        padding: 0 15px; 
     }
-	
-    #content {
-        float: none;
-        width: 100%;
-        padding-right: 0;
-    }
-
-    /* La barra lateral baja y se acomoda debajo del contenido */
-    aside {
-        float: none;
-        width: 100%;
-        padding-left: 0;
-        border-left: none;
-        border-top: 2px solid #000;
-        padding-top: 30px;
-        margin-top: 40px;
+    
+    /* Header apilado */
+    .header-moderno {
+        flex-direction: column; 
+        gap: 15px;
     }
 
-    /* Las prendas de la tienda ahora ocupan el 100% (1 por fila para que se vean grandes) */
-    .articulo-producto {
-        width: 100%; 
+    /* Banner más pequeño */
+    .hero-section img { height: 250px; }
+    
+    /* Productos a 2 columnas en celular */
+    .articulo-producto, .categoria-item {
+        width: calc(50% - 10px); 
     }
-
-    /* Las categorías visuales del inicio muestran 2 por fila en celular en lugar de 3 */
-    .categoria-item {
-        width: 47%; 
+    
+    /* Ajuste de Carrusel */
+    .carrusel-contenedor .categoria-item {
+        flex: 0 0 75%; 
+        min-width: 220px;
     }
-    .categoria-item img {
-        height: 200px; /* Un poco más bajitas para que quepan bien */
+    .btn-carrusel {
+        width: 35px; height: 35px; font-size: 14px;
     }
-
-    /* El banner principal del inicio se hace más pequeño */
-    .hero-section img {
-        height: 250px;
+    
+    /* Footer y Textos apilados */
+    .sostenibilidad-textos {
+        flex-direction: column; 
+        gap: 20px;
     }
-	
-	/* =========================================
-   ESTILOS PARA PRENDAS VENDIDAS (BAZAR)
-========================================= */
-
-/* Opaca la imagen y la pone en blanco y negro */
-.articulo-producto.vendido .img-producto {
-    opacity: 0.5;
-    filter: grayscale(100%);
-}
-
-/* Tacha el precio para dar a entender que ya se fue */
-.articulo-producto.vendido .precio {
-    text-decoration: line-through;
-    color: #999;
-}
-
-/* Un botón gris que no hace nada cuando le das clic */
-.btn-agotado {
-    background: #eeeeee;
-    color: #888888;
-    border: 1px solid #cccccc;
-    padding: 12px 0;
-    width: 100%; 
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    cursor: not-allowed; /* Cambia el cursor a un símbolo de prohibido */
-}
-	
+    .footer-moderno {
+        flex-direction: column; 
+        text-align: center;
+    }
 }
